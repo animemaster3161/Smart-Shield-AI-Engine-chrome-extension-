@@ -1,0 +1,10 @@
+accept-encoding
+account-verify-info.com
+localhost
+paypal-support-help.online
+random-news-site.com
+secure-paypal-verify.xyz
+secure-paypal-verify.xyz
+supabase.com
+www.paypal-secure-login-verify.xyz
+calendar.google.com

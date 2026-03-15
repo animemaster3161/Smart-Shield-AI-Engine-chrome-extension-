@@ -1,0 +1,251 @@
+[Mon Mar 02 16:17:22 2026] https%3a%2f%2fwww.facebook.com%2flogin.php%3flogin_attempt%3d1 | SAFE_VISIT | Score: 0.8
+[Mon Mar 02 16:17:24 2026] https%3a%2f%2fwww.facebook.com%2flogin.php%3flogin_attempt%3d1 | SAFE_VISIT | Score: 1.6
+[Mon Mar 02 16:17:28 2026] https%3a%2f%2fwww.facebook.com%2flogin.php%3flogin_attempt%3d1 | SAFE_VISIT | Score: 2.4
+[Mon Mar 02 16:17:32 2026] https%3a%2f%2fwww.facebook.com%2flogin.php%3flogin_attempt%3d1 | SAFE_VISIT | Score: 3.2
+[Mon Mar 02 16:17:41 2026] https%3a%2f%2fwww.facebook.com%2flogin.php%3flogin_attempt%3d1 | SAFE_VISIT | Score: 4
+[Mon Mar 02 16:17:44 2026] https%3a%2f%2fwww.facebook.com%2flogin.php%3flogin_attempt%3d1 | SAFE_VISIT | Score: 4.8
+[Mon Mar 02 16:17:48 2026] https%3a%2f%2fwww.facebook.com%2flogin.php%3flogin_attempt%3d1 | SAFE_VISIT | Score: 5.6
+[Mon Mar 02 16:17:55 2026] https%3a%2f%2fwww.facebook.com%2flogin.php%3flogin_attempt%3d1 | SAFE_VISIT | Score: 6.4
+[Mon Mar 02 16:17:56 2026] https%3a%2f%2fwww.facebook.com%2flogin.php%3flogin_attempt%3d1 | THREAT_DETECTED | Score: 13.2
+[Mon Mar 02 16:18:46 2026] chrome-extension%3a%2f%2fjegkofhepmmlajmjfhcimchhfnffljai%2fblocked.html | SAFE_VISIT | Score: 0.8
+[Mon Mar 02 16:19:57 2026] chrome%3a%2f%2fnewtab%2f | SAFE_VISIT | Score: 0.8
+[Mon Mar 02 16:20:39 2026] https%3a%2f%2ficonscout.com%2ficons%2fsmp | SAFE_VISIT | Score: 0.8
+[Mon Mar 02 16:21:02 2026] https%3a%2f%2ficonscout.com%2ficons%2fsmp%3f__cf_chl_tk%3d5edlmgydojtdgsrn02zad3r6uw7razfhp3t_xacjfco-1772448634-1.0.1.1-fzmuizumgflyz9taqo1ycdulqpameyiqwmuqkj5ohnc | SAFE_VISIT | Score: 0.8
+[Mon Mar 02 16:21:38 2026] https%3a%2f%2ficonscout.com%2ficons%2fsmp | SAFE_VISIT | Score: 1.6
+[Mon Mar 02 16:22:22 2026] https%3a%2f%2faccounts.google.com%2fsignin%2foauth%2fid%3fauthuser%3d0%26part%3daji8hamcjg0jo0gn1njbgyfb981tw3_x-1fkzeycdlw451fjfc_zgk-z1i_ec6wcvr3_vlcohqel4sz0cpxbqmrikfpe8i2yx-o86isxweet-lgu6oafqtkky1mahbykboiytrffjtdu5tpxddykg-gxqgzcntvpj0h7zqsduvh7sx5yi2rgktcst1iqiog6tkwqzx3biokz1ybxhwphkaldh4b1nyl29s-w4b8dyj78qt3voea7hdu1qjgg3agngr63tegprctyezastrpv8-qg9k2fqb2ha8hnnqepc-7eruouxuylk0aurggbfhnevqg4_zi5lsg6hbuckwfwjp1jcd3ljndvnn7f-dojcd88vrk4tzyiyz38-qol0zaf4-doub15ri-zmiff8sgsac3ipzkp-mqomkjwfe6bswqpsijss25mogs7lmqzykbjrzbb49usqgrvei-qsbbsl-losx4jobkjjgkr34ccjpnzle5pweoc2lrvliznlib_u_x5drj1lmbguznvcydu2ajpg7cxfr6rwlhuyr9ikpxpqrkcmkevaexiqkt3gddpqs8lzu02_lxeih2vmsqmqcirzi1qkv-tkkp-jy20kbieoghlr2bzfuabmsw9yaltkaaaxjaai7hgzqd_zqyux9bh69zdqmlaka5uv-nqpq6pa-zuahbqujexynhzdgwzqqwtwoe6sq4ssvzvaqzakcataetqar5zlyewzrex8fiz3uq1kdng6vr4u0trjearvjno4l0yea1jjuhrfiwkvvak5kfb0uwbmcpzda8duteg5wzrcdmnudcfkua8koz4-ib36ciitvu7y5fxajrez_ho180wld30pa%26flowname%3dgeneraloauthflow%26as%3ds171020787%253a1772448728330200%26client_id%3d301433174578-dts71njg8qairruf44dsa1s5gagarji0.apps.googleusercontent.com%26rapt%3daejhl4npi24vjzinlhg7iqphwyxhjmuf6cfd55ic_8ysv4dfy9ujppw6ynjbns-24jbb3awq17nde-u72kawdfkepwq_5ntpvzqm1dcmfi8p8geigt2xqq4%26requestpath%3d%252fsignin%252foauth%252fconsent%23 | SAFE_VISIT | Score: 0.8
+[Mon Mar 02 16:23:05 2026] chrome%3a%2f%2fnewtab%2f | SAFE_VISIT | Score: 1.6
+[Mon Mar 02 16:23:41 2026] https%3a%2f%2ficons8.com%2ficons%2fset%2fsmp | SAFE_VISIT | Score: 0.8
+[Mon Mar 02 16:23:42 2026] https%3a%2f%2fwww.google.com%2fsearch%3fq%3dsmp%2bmix%2bicon%26oq%3d%26aqs%3dchrome.1.35i39i362l8.199107j0j7%26sourceid%3dchrome%26ie%3dutf-8%23sv%3dcamszhowkg5mvfbmahdxz296b0zmttiozlrqzmh3v2dvem9gte06dnfjc2jfcnnoynrsbxdniaqqlgoax1ltdwxhwnu3sgntwtqtrvb2oe95v0ffndmsdmzuugzod1dnb3pvrkxngaawarghinrj2kgpmajkcbacgaigaigc | SAFE_VISIT | Score: 0.8
+[Mon Mar 02 16:24:05 2026] https%3a%2f%2ficonscout.com%2ficons%2fsmp | SAFE_VISIT | Score: 2.4
+[Mon Mar 02 16:25:29 2026] chrome%3a%2f%2fnewtab%2f | SAFE_VISIT | Score: 2.4
+[Mon Mar 02 18:58:48 2026] https%3a%2f%2fwww.search.ask.com%2f | SAFE_VISIT | Score: 0.8
+[Mon Mar 02 18:58:51 2026] https%3a%2f%2fwww.search.ask.com%2f | SAFE_VISIT | Score: 1.6
+[Mon Mar 02 18:59:12 2026] chrome%3a%2f%2fnewtab%2f | SAFE_VISIT | Score: 0.8
+[Mon Mar 02 18:59:34 2026] chrome%3a%2f%2fsettings%2f | SAFE_VISIT | Score: 0.8
+[Mon Mar 02 18:59:41 2026] chrome%3a%2f%2fsettings%2fimportdata | SAFE_VISIT | Score: 0.8
+[Mon Mar 02 18:59:45 2026] chrome%3a%2f%2fsettings%2f | SAFE_VISIT | Score: 1.6
+[Mon Mar 02 19:00:00 2026] chrome%3a%2f%2fextensions%2f | SAFE_VISIT | Score: 0.8
+[Mon Mar 02 19:00:20 2026] chrome%3a%2f%2fnewtab%2f | SAFE_VISIT | Score: 1.6
+[Mon Mar 02 19:00:46 2026] https%3a%2f%2fwww.search.ask.com%2f | SAFE_VISIT | Score: 2.4
+[Mon Mar 02 19:00:50 2026] https%3a%2f%2fwww.search.ask.com%2f | SAFE_VISIT | Score: 3.2
+[Mon Mar 02 19:00:54 2026] https%3a%2f%2fwww.search.ask.com%2f | SAFE_VISIT | Score: 4
+[Mon Mar 02 19:01:01 2026] https%3a%2f%2fwww.search.ask.com%2f | SAFE_VISIT | Score: 4.8
+[Mon Mar 02 19:01:07 2026] https%3a%2f%2fwww.search.ask.com%2f | SAFE_VISIT | Score: 5.6
+[Mon Mar 02 19:01:14 2026] https%3a%2f%2fwww.search.ask.com%2f | SAFE_VISIT | Score: 6.4
+[Mon Mar 02 19:01:27 2026] https%3a%2f%2fwww.search.ask.com%2f | SAFE_VISIT | Score: 7.2
+[Mon Mar 02 19:01:27 2026] chrome%3a%2f%2fnewtab%2f | SAFE_VISIT | Score: 2.4
+[Mon Mar 02 19:01:34 2026] https%3a%2f%2fwww.facebook.com%2flogin.php%3flogin_attempt%3d1 | SAFE_VISIT | Score: 0.8
+[Mon Mar 02 19:01:37 2026] https%3a%2f%2fwww.facebook.com%2flogin.php%3flogin_attempt%3d1 | SAFE_VISIT | Score: 1.6
+[Mon Mar 02 19:01:39 2026] https%3a%2f%2fwww.facebook.com%2flogin.php%3flogin_attempt%3d1 | SAFE_VISIT | Score: 2.4
+[Mon Mar 02 19:01:41 2026] https%3a%2f%2fwww.facebook.com%2flogin.php%3flogin_attempt%3d1 | SAFE_VISIT | Score: 3.2
+[Mon Mar 02 19:01:44 2026] https%3a%2f%2fwww.facebook.com%2flogin.php%3flogin_attempt%3d1 | SAFE_VISIT | Score: 4
+[Mon Mar 02 19:01:48 2026] https%3a%2f%2fwww.facebook.com%2flogin.php%3flogin_attempt%3d1 | SAFE_VISIT | Score: 4.8
+[Mon Mar 02 19:01:50 2026] https%3a%2f%2fwww.facebook.com%2flogin.php%3flogin_attempt%3d1 | SAFE_VISIT | Score: 5.6
+[Mon Mar 02 19:01:53 2026] https%3a%2f%2fwww.facebook.com%2flogin.php%3flogin_attempt%3d1 | SAFE_VISIT | Score: 6.4
+[Mon Mar 02 19:01:54 2026] https%3a%2f%2fwww.facebook.com%2flogin.php%3flogin_attempt%3d1 | THREAT_DETECTED | Score: 13.2
+[Mon Mar 02 19:02:10 2026] chrome%3a%2f%2fnewtab%2f | SAFE_VISIT | Score: 3.2
+[Mon Mar 02 19:03:05 2026] https%3a%2f%2fgemini.google.com%2fapp%3fis_sa%3d1%26is_sa%3d1%26android-min-version%3d301356232%26ios-min-version%3d322.0%26campaign_id%3dbkws%26utm_source%3dsem%26utm_medium%3dpaid-media%26utm_campaign%3dbkws%26pt%3d9008%26mt%3d8%26ct%3dp-growth-sem-bkws%26gclsrc%3daw.ds%26gad_source%3d1%26gad_campaignid%3d20357620749%26gbraid%3d0aaaaapk5bhmuxeqg5i8lxatw1lusxjeoi%26gclid%3dcjwkcaiah5xnbhaaeiwa_bu8fvqxeslklmgim9cj5_uov-emsx5ytublumq7yzvuqma1aislbxztbbocgiyqavd_bwe | SAFE_VISIT | Score: 0.8
+[Mon Mar 02 19:03:09 2026] https%3a%2f%2fwww.google.com%2fsearch%3fq%3d2nd%2bhand%2btab%26oq%3d2nd%2bhand%2btab%26aqs%3dchrome..0i512j69i57j0i512l8.12193j0j7%26sourceid%3dchrome%26ie%3dutf-8%26zx%3d1772458389669%26no_sw_cr%3d1 | SAFE_VISIT | Score: 0.8
+[Mon Mar 02 19:03:21 2026] https%3a%2f%2fwww.olx.in%2fen-in%2fdelhi_g4058659%2ftablets_c1455 | SAFE_VISIT | Score: 0.8
+[Mon Mar 02 19:04:58 2026] https%3a%2f%2fwww.olx.in%2fen-in%2fdelhi_g4058659%2ftablets_c1455%3fpage%3d2 | SAFE_VISIT | Score: 0.8
+[Mon Mar 02 19:06:24 2026] https%3a%2f%2fwww.olx.in%2fen-in%2fdelhi_g4058659%2ftablets_c1455%3fpage%3d2 | SAFE_VISIT | Score: 1.6
+[Mon Mar 02 19:06:44 2026] chrome%3a%2f%2fnewtab%2f | SAFE_VISIT | Score: 4
+[Tue Mar 03 01:15:09 2026] file%3a%2f%2f%2fc%3a%2fusers%2fuser%2fdesktop%2faddative%2520learning%2fproject%2fdashboard.html | SAFE_VISIT | Score: 0.8
+[Wed Mar 04 22:48:18 2026] https%3a%2f%2fgemini.google.com%2fapp%2f15da066c338fd66e%3fis_sa%3d1%26is_sa%3d1%26android-min-version%3d301356232%26ios-min-version%3d322.0%26campaign_id%3dbkws%26utm_source%3dsem%26utm_medium%3dpaid-media%26utm_campaign%3dbkws%26pt%3d9008%26mt%3d8%26ct%3dp-growth-sem-bkws%26gclsrc%3daw.ds%26gad_source%3d1%26gad_campaignid%3d20357620749%26gbraid%3d0aaaaapk5bhmu83rv3_7ljiyez2dft4rt4%26gclid%3dcjwkcaiazz_nbhaeeiwamtqky4nu0c4jxzjr2iqkhk1cki8tjknejgm9nna8qcqfz3mfunerc3j9axocuucqavd_bwe | SAFE_VISIT | Score: 0.8
+[Wed Mar 04 22:48:29 2026] https%3a%2f%2fgemini.google.com%2fapp%2f15da066c338fd66e%3fis_sa%3d1%26is_sa%3d1%26android-min-version%3d301356232%26ios-min-version%3d322.0%26campaign_id%3dbkws%26utm_source%3dsem%26utm_medium%3dpaid-media%26utm_campaign%3dbkws%26pt%3d9008%26mt%3d8%26ct%3dp-growth-sem-bkws%26gclsrc%3daw.ds%26gad_source%3d1%26gad_campaignid%3d20357620749%26gbraid%3d0aaaaapk5bhmu83rv3_7ljiyez2dft4rt4%26gclid%3dcjwkcaiazz_nbhaeeiwamtqky4nu0c4jxzjr2iqkhk1cki8tjknejgm9nna8qcqfz3mfunerc3j9axocuucqavd_bwe | SAFE_VISIT | Score: 1.6
+[Wed Mar 04 22:48:40 2026] chrome%3a%2f%2fnewtab%2f | SAFE_VISIT | Score: 0.8
+[Wed Mar 04 22:50:54 2026] https%3a%2f%2fweb.whatsapp.com%2f | SAFE_VISIT | Score: 0.8
+[Wed Mar 04 22:52:07 2026] https%3a%2f%2fweb.whatsapp.com%2f | SAFE_VISIT | Score: 1.6
+[Wed Mar 04 22:53:43 2026] chrome%3a%2f%2fextensions%2f | SAFE_VISIT | Score: 0.8
+[Wed Mar 04 22:53:57 2026] chrome%3a%2f%2fnewtab%2f | SAFE_VISIT | Score: 1.6
+[Fri Mar 06 00:44:48 2026] claude.ai | WHITELISTED | Score: 0
+[Fri Mar 06 00:53:16 2026] www.search.ask.com | WHITELISTED | Score: 0
+[Fri Mar 06 00:55:38 2026] claude.ai | WHITELISTED | Score: 0
+[Fri Mar 06 00:57:15 2026] www.google.com | WHITELISTED | Score: 0
+[Fri Mar 06 01:00:05 2026] supabase.com | SAFE_VISIT | Score: 0.8
+[Fri Mar 06 01:00:18 2026] web.whatsapp.com | WHITELISTED | Score: 0
+[Fri Mar 06 01:00:20 2026] supabase.com | SAFE_VISIT | Score: 1.6
+[Fri Mar 06 01:00:21 2026] supabase.com | SAFE_VISIT | Score: 8.4
+[Fri Mar 06 01:00:22 2026] supabase.com | SAFE_VISIT | Score: 3.2
+[Fri Mar 06 01:00:47 2026] github.com | WHITELISTED | Score: 0
+[Fri Mar 06 01:00:47 2026] github.com | WHITELISTED | Score: 0
+[Fri Mar 06 01:01:09 2026] github.com | WHITELISTED | Score: 0
+[Fri Mar 06 01:01:21 2026] supabase.com | SAFE_VISIT | Score: 4
+[Fri Mar 06 01:01:23 2026] supabase.com | THREAT_DETECTED | Score: 10.8
+[Fri Mar 06 01:01:28 2026] web.whatsapp.com | WHITELISTED | Score: 0
+[Fri Mar 06 01:08:59 2026] supabase.com | BLACKLISTED | Score: 99
+[Fri Mar 06 01:09:17 2026] claude.ai | WHITELISTED | Score: 0
+[Fri Mar 06 01:13:14 2026] claude.ai | WHITELISTED | Score: 0
+[Fri Mar 06 01:15:50 2026] secure-paypal-verify.xyz | SAFE_VISIT | Score: 5.8
+[Fri Mar 06 01:15:59 2026] secure-paypal-verify.xyz | SAFE_VISIT | Score: 6.6
+[Fri Mar 06 01:30:52 2026] secure-paypal-verify.xyz | THREAT_DETECTED | Score: 17.5 | SUSPICIOUS_TLD:.xyz, PHISHING_PATTERN, BRAND_IMPERSONATION:paypal, PATH_PATTERN
+[Fri Mar 06 01:31:24 2026] secure-paypal-verify.xyz | BLACKLISTED | Score: 99
+[Fri Mar 06 01:34:19 2026] gemini.google.com | WHITELISTED | Score: 0
+[Fri Mar 06 01:36:24 2026] gemini.google.com | WHITELISTED | Score: 0
+[Fri Mar 06 01:40:04 2026] claude.ai | WHITELISTED | Score: 0
+[Fri Mar 06 01:44:13 2026] secure-paypal-verify.xyz | BLACKLISTED | Score: 99
+[Fri Mar 06 01:46:04 2026] claude.ai | WHITELISTED | Score: 0
+[Fri Mar 06 01:51:45 2026] claude.ai | WHITELISTED | Score: 0
+[Fri Mar 06 01:54:17 2026] paypal-support-help.online | THREAT_DETECTED | Score: 17.5 | SUSPICIOUS_TLD:.online, PHISHING_PATTERN, BRAND_IMPERSONATION:paypal, PATH_PATTERN
+[Fri Mar 06 02:04:54 2026] app.netlify.com | SAFE_VISIT | Score: 0.5 | OK
+[Fri Mar 06 02:07:42 2026] app.netlify.com | SAFE_VISIT | Score: 1 | OK
+[Fri Mar 06 02:07:43 2026] app.netlify.com | SAFE_VISIT | Score: 6.5 | RAPID_ACCESS
+[Fri Mar 06 02:09:00 2026] app.netlify.com | SAFE_VISIT | Score: 2 | OK
+[Fri Mar 06 02:10:06 2026] app.netlify.com | SAFE_VISIT | Score: 2.5 | OK
+[Fri Mar 06 02:10:08 2026] app.netlify.com | SAFE_VISIT | Score: 8 | RAPID_ACCESS
+[Fri Mar 06 02:10:12 2026] app.netlify.com | SAFE_VISIT | Score: 3.5 | OK
+[Fri Mar 06 02:12:01 2026] smartshieldsecurity.netlify.app | SAFE_VISIT | Score: 0.5 | OK
+[Fri Mar 06 02:17:03 2026] claude.ai | WHITELISTED | Score: 0
+[Fri Mar 06 02:17:07 2026] claude.ai | WHITELISTED | Score: 0
+[Fri Mar 06 02:18:05 2026] secure-paypal-verify.xyz | BLACKLISTED | Score: 99
+[Fri Mar 06 02:18:29 2026] www.youtube.com | WHITELISTED | Score: 0
+[Fri Mar 06 18:18:38 2026] www.search.ask.com | WHITELISTED | Score: 0
+[Fri Mar 06 18:18:40 2026] www.search.ask.com | WHITELISTED | Score: 0
+[Fri Mar 06 18:18:58 2026] www.search.ask.com | WHITELISTED | Score: 0
+[Fri Mar 06 18:19:29 2026] www.youtube.com | WHITELISTED | Score: 0
+[Fri Mar 06 18:19:44 2026] www.youtube.com | WHITELISTED | Score: 0
+[Fri Mar 06 18:19:44 2026] www.youtube.com | WHITELISTED | Score: 0
+[Fri Mar 06 18:20:12 2026] www.youtube.com | WHITELISTED | Score: 0
+[Fri Mar 06 19:32:50 2026] www.youtube.com | WHITELISTED | Score: 0
+[Fri Mar 06 22:51:12 2026] secure-paypal-verify.xyz | BLACKLISTED | Score: 99
+[Fri Mar 06 22:52:11 2026] claude.ai | WHITELISTED | Score: 0
+[Fri Mar 06 23:16:01 2026] secure-paypal-verify.xyz | BLACKLISTED | Score: 99
+[Fri Mar 06 23:33:35 2026] secure-paypal-verify.xyz | BLACKLISTED | Score: 99
+[Fri Mar 06 23:39:59 2026] secure-paypal-verify.xyz | BLACKLISTED | Score: 99
+[Fri Mar 06 23:40:10 2026] localhost | SAFE_VISIT | Score: 3.8 | PATH_PATTERN
+[Fri Mar 06 23:40:10 2026] secure-paypal-verify.xyz | BLACKLISTED | Score: 99
+[Fri Mar 06 23:40:10 2026] localhost | THREAT_DETECTED | Score: 11.6 | PATH_PATTERN, RAPID_x2
+[Fri Mar 06 23:40:10 2026] secure-paypal-verify.xyz
+accept-encoding | THREAT_DETECTED | Score: 21.8 | PHISHING_PATTERN, BRAND_IMPERSONATION:paypal, LONG_DOMAIN, HYPHENS:3, PATH_PATTERN, HTTP_NO_TLS
+[Fri Mar 06 23:40:10 2026] localhost | BLACKLISTED | Score: 99
+[Fri Mar 06 23:42:19 2026] claude.ai | WHITELISTED | Score: 0
+[Fri Mar 06 23:42:25 2026] claude.ai | WHITELISTED | Score: 0
+[Fri Mar 06 23:42:30 2026] claude.ai | WHITELISTED | Score: 0
+[Fri Mar 06 23:42:36 2026] claude.ai | WHITELISTED | Score: 0
+[Fri Mar 06 23:43:30 2026] claude.ai | WHITELISTED | Score: 0
+[Fri Mar 06 23:43:30 2026] claude.ai | WHITELISTED | Score: 0
+[Fri Mar 06 23:44:12 2026] claude.ai | WHITELISTED | Score: 0
+[Fri Mar 06 23:44:18 2026] claude.ai | WHITELISTED | Score: 0
+[Fri Mar 06 23:44:18 2026] claude.ai | WHITELISTED | Score: 0
+[Fri Mar 06 23:44:54 2026] claude.ai | WHITELISTED | Score: 0
+[Fri Mar 06 23:44:54 2026] claude.ai | WHITELISTED | Score: 0
+[Fri Mar 06 23:45:03 2026] claude.ai | WHITELISTED | Score: 0
+[Fri Mar 06 23:45:14 2026] claude.ai | WHITELISTED | Score: 0
+[Fri Mar 06 23:45:39 2026] claude.ai | WHITELISTED | Score: 0
+[Fri Mar 06 23:45:46 2026] claude.ai | WHITELISTED | Score: 0
+[Fri Mar 06 23:45:48 2026] claude.ai | WHITELISTED | Score: 0
+[Fri Mar 06 23:48:55 2026] secure-paypal-verify.xyz | BLACKLISTED | Score: 99
+[Fri Mar 06 23:48:55 2026] localhost | BLACKLISTED | Score: 99
+[Fri Mar 06 23:48:55 2026] secure-paypal-verify.xyz
+accept-encoding | BLACKLISTED | Score: 99
+[Fri Mar 06 23:48:55 2026] localhost | BLACKLISTED | Score: 99
+[Sat Mar 07 00:02:46 2026] claude.ai | WHITELISTED | Score: 0
+[Sat Mar 07 00:02:55 2026] localhost | BLACKLISTED | Score: 99
+[Sat Mar 07 00:04:12 2026] localhost | BLACKLISTED | Score: 99
+[Sat Mar 07 00:20:12 2026] claude.ai | WHITELISTED | Score: 0
+[Sat Mar 07 00:20:18 2026] localhost | BLACKLISTED | Score: 99
+[Sat Mar 07 00:20:41 2026] secure-paypal-verify.xyz | BLACKLISTED | Score: 99
+[Sat Mar 07 00:20:43 2026] secure-paypal-verify.xyz
+accept-encoding | THREAT_DETECTED | Score: 21.8 | PHISHING_PATTERN, BRAND_IMPERSONATION:paypal, LONG_DOMAIN, HYPHENS:3, PATH_PATTERN, HTTP_NO_TLS
+[Sat Mar 07 00:22:15 2026] localhost | BLACKLISTED | Score: 99
+[Sat Mar 07 00:22:24 2026] secure-paypal-verify.xyz | BLACKLISTED | Score: 99
+[Sat Mar 07 00:22:25 2026] secure-paypal-verify.xyz
+accept-encoding | BLACKLISTED | Score: 99
+[Sat Mar 07 00:22:49 2026] secure-paypal-verify.xyz | BLACKLISTED | Score: 99
+[Sat Mar 07 00:22:49 2026] secure-paypal-verify.xyz
+accept-encoding | BLACKLISTED | Score: 99
+[Sat Mar 07 00:22:50 2026] localhost | BLACKLISTED | Score: 99
+[Sat Mar 07 00:23:07 2026] web.whatsapp.com | WHITELISTED | Score: 0
+[Sat Mar 07 00:23:08 2026] gemini.google.com | WHITELISTED | Score: 0
+[Sat Mar 07 23:03:32 2026] secure-paypal-verify.xyz | BLACKLISTED | Score: 99
+[Sat Mar 07 23:03:38 2026] secure-paypal-verify.xyz | UNBLOCKED_BY_USER | Score: 0 | Manual override
+[Sat Mar 07 23:03:46 2026] www.google.com | WHITELISTED | Score: 0
+[Sat Mar 07 23:03:47 2026] www.google.com | WHITELISTED | Score: 0
+[Sat Mar 07 23:32:10 2026] web.whatsapp.com | WHITELISTED | Score: 0
+[Sat Mar 07 23:33:16 2026] web.whatsapp.com | WHITELISTED | Score: 0
+[Sun Mar 08 00:42:43 2026] www.google.com | WHITELISTED | Score: 0
+[Sun Mar 08 00:42:44 2026] www.google.com | WHITELISTED | Score: 0
+[Sun Mar 08 00:42:48 2026] www.google.com | WHITELISTED | Score: 0
+[Sun Mar 08 00:42:48 2026] www.ilovepdf.com | SAFE_VISIT | Score: 0.8 | OK
+[Sun Mar 08 00:43:21 2026] www.ilovepdf.com | SAFE_VISIT | Score: 1.6 | OK
+[Sun Mar 08 00:45:02 2026] web.whatsapp.com | WHITELISTED | Score: 0
+[Sun Mar 08 00:45:56 2026] web.whatsapp.com | WHITELISTED | Score: 0
+[Sun Mar 08 00:54:50 2026] www.ilovepdf.com | SAFE_VISIT | Score: 2.4 | OK
+[Sun Mar 08 00:55:33 2026] www.ilovepdf.com | SAFE_VISIT | Score: 3.2 | OK
+[Sun Mar 08 08:49:52 2026] www.ask.com | SAFE_VISIT | Score: 0.8 | OK
+[Sun Mar 08 08:50:37 2026] web.whatsapp.com | WHITELISTED | Score: 0
+[Sun Mar 08 08:51:21 2026] web.whatsapp.com | WHITELISTED | Score: 0
+[Sun Mar 08 08:51:22 2026] secure-paypal-verify.xyz | THREAT_DETECTED | Score: 17.8 | SUSPICIOUS_TLD:.xyz, PHISHING_PATTERN, BRAND_IMPERSONATION:paypal, PATH_PATTERN
+[Sun Mar 08 08:51:26 2026] secure-paypal-verify.xyz | BLACKLISTED | Score: 99
+[Sun Mar 08 08:55:08 2026] www.paypal-secure-login-verify.xyz | THREAT_DETECTED | Score: 19.3 | SUSPICIOUS_TLD:.xyz, PHISHING_PATTERN, BRAND_IMPERSONATION:paypal, HYPHENS:3, PATH_PATTERN
+[Sun Mar 08 08:58:47 2026] web.whatsapp.com | WHITELISTED | Score: 0
+[Sun Mar 08 09:09:23 2026] account-verify-info.com | SAFE_VISIT | Score: 8.8 | PHISHING_PATTERN, PATH_PATTERN
+[Sun Mar 08 09:09:33 2026] account-verify-info.com | THREAT_DETECTED | Score: 9.6 | PHISHING_PATTERN, PATH_PATTERN
+[Sun Mar 08 09:10:11 2026] www.paypal-secure-login-verify.xyz | BLACKLISTED | Score: 99
+[Sun Mar 08 09:10:33 2026] www.paypal-secure-login-verify.xyz | BLACKLISTED | Score: 99
+[Sun Mar 08 09:10:45 2026] www.paypal-secure-login-verify.xyz | UNBLOCKED_BY_USER | Score: 0 | Manual override
+[Sun Mar 08 09:17:25 2026] www.ask.com | SAFE_VISIT | Score: 1.6 | OK
+[Sun Mar 08 09:17:35 2026] web.whatsapp.com | WHITELISTED | Score: 0
+[Sun Mar 08 09:17:48 2026] web.whatsapp.com | WHITELISTED | Score: 0
+[Sun Mar 08 09:19:54 2026] www.paypal-secure-login-verify.xyz | THREAT_DETECTED | Score: 20.1 | SUSPICIOUS_TLD:.xyz, PHISHING_PATTERN, BRAND_IMPERSONATION:paypal, HYPHENS:3, PATH_PATTERN
+[Sun Mar 08 09:20:19 2026] amazon-free-gift-claim-now.top | THREAT_DETECTED | Score: 20.8 | SUSPICIOUS_TLD:.top, PHISHING_PATTERN, BRAND_IMPERSONATION:amazon, HYPHENS:4, PATH_PATTERN
+[Sun Mar 08 09:20:49 2026] amazon-free-gift-claim-now.top | BLACKLISTED | Score: 99
+[Sun Mar 08 17:48:45 2026] web.whatsapp.com | WHITELISTED | Score: 0
+[Sun Mar 08 17:49:23 2026] web.whatsapp.com | WHITELISTED | Score: 0
+[Sun Mar 08 17:51:05 2026] amazon-free-gift-claim-now.top | BLACKLISTED | Score: 99
+[Sun Mar 08 17:52:37 2026] www.google.com | WHITELISTED | Score: 0
+[Sun Mar 08 17:52:37 2026] www.google.com | WHITELISTED | Score: 0
+[Sun Mar 08 17:52:39 2026] www.google.com | WHITELISTED | Score: 0
+[Sun Mar 08 17:54:47 2026] www.google.com | WHITELISTED | Score: 0
+[Sun Mar 08 17:54:47 2026] www.google.com | WHITELISTED | Score: 0
+[Sun Mar 08 17:54:48 2026] www.google.com | WHITELISTED | Score: 0
+[Sun Mar 08 17:54:53 2026] www.youareanidiot.cc | SAFE_VISIT | Score: 0.8 | OK
+[Sun Mar 08 17:55:11 2026] www.youareanidiot.cc | SAFE_VISIT | Score: 1.6 | OK
+[Sun Mar 08 17:55:52 2026] amazon-free-gift-claim-now.top | UNBLOCKED_BY_USER | Score: 0 | Manual override
+[Sun Mar 08 17:56:31 2026] random-news-site.com | SAFE_VISIT | Score: 0.8 | OK
+[Sun Mar 08 17:56:33 2026] random-news-site.com | SAFE_VISIT | Score: 8.6 | RAPID_x2
+[Sun Mar 08 17:56:34 2026] random-news-site.com | THREAT_DETECTED | Score: 27.9 | RAPID_x3, FORCE_BLOCK_RAPID
+[Sun Mar 08 17:57:56 2026] account-verify-info.com | BLACKLISTED | Score: 99
+[Sun Mar 08 17:59:18 2026] smartshieldengine.netlify.app | SAFE_VISIT | Score: 0.8 | OK
+[Sun Mar 08 22:12:03 2026] gemini.google.com | WHITELISTED | Score: 0
+[Sun Mar 08 22:12:07 2026] gemini.google.com | WHITELISTED | Score: 0
+[Sun Mar 08 22:13:51 2026] gemini.google.com | WHITELISTED | Score: 0
+[Sun Mar 08 22:16:08 2026] web.whatsapp.com | WHITELISTED | Score: 0
+[Sun Mar 08 22:16:32 2026] web.whatsapp.com | WHITELISTED | Score: 0
+[Sun Mar 08 22:28:19 2026] www.google.com | WHITELISTED | Score: 0
+[Sun Mar 08 22:28:20 2026] www.google.com | WHITELISTED | Score: 0
+[Sun Mar 08 22:28:24 2026] www.google.com | WHITELISTED | Score: 0
+[Sun Mar 08 22:48:39 2026] gemini.google.com | WHITELISTED | Score: 0
+[Sun Mar 08 22:49:19 2026] gemini.google.com | WHITELISTED | Score: 0
+[Sun Mar 08 23:22:48 2026] gemini.google.com | WHITELISTED | Score: 0
+[Sun Mar 08 23:29:27 2026] web.whatsapp.com | WHITELISTED | Score: 0
+[Sun Mar 08 23:29:32 2026] gemini.google.com | WHITELISTED | Score: 0
+[Sun Mar 08 23:29:43 2026] gemini.google.com | WHITELISTED | Score: 0
+[Sun Mar 08 23:29:50 2026] gemini.google.com | WHITELISTED | Score: 0
+[Sun Mar 08 23:30:14 2026] web.whatsapp.com | WHITELISTED | Score: 0
+[Sun Mar 08 23:30:38 2026] gemini.google.com | WHITELISTED | Score: 0
+[Mon Mar 09 00:13:20 2026] www.netlify.com | SAFE_VISIT | Score: 0.8 | OK
+[Mon Mar 09 00:13:28 2026] www.netlify.com | SAFE_VISIT | Score: 8.6 | RAPID_x2
+[Mon Mar 09 00:13:41 2026] app.netlify.com | SAFE_VISIT | Score: 0.8 | OK
+[Mon Mar 09 00:13:44 2026] app.netlify.com | SAFE_VISIT | Score: 8.6 | RAPID_x2
+[Mon Mar 09 00:13:45 2026] app.netlify.com | THREAT_DETECTED | Score: 27.9 | RAPID_x3, FORCE_BLOCK_RAPID
+[Mon Mar 09 00:14:08 2026] app.netlify.com | UNBLOCKED_BY_USER | Score: 0 | Manual override
+[Mon Mar 09 00:29:42 2026] gemini.google.com | WHITELISTED | Score: 0
+[Mon Mar 09 00:29:43 2026] gemini.google.com | WHITELISTED | Score: 0
+[Mon Mar 09 00:39:33 2026] www.google.com | WHITELISTED | Score: 0
+[Mon Mar 09 00:39:33 2026] www.google.com | WHITELISTED | Score: 0
+[Mon Mar 09 00:39:41 2026] en.wikipedia.org | SAFE_VISIT | Score: 0.8 | OK
+[Mon Mar 09 00:52:17 2026] gemini.google.com | WHITELISTED | Score: 0
+[Mon Mar 09 00:53:02 2026] gemini.google.com | WHITELISTED | Score: 0
+[Mon Mar 09 00:54:26 2026] en.wikipedia.org | SAFE_VISIT | Score: 1.6 | OK
+[Mon Mar 09 00:54:36 2026] web.whatsapp.com | WHITELISTED | Score: 0
+[Mon Mar 09 00:55:30 2026] web.whatsapp.com | WHITELISTED | Score: 0
+[Mon Mar 09 01:15:22 2026] www.youtube.com | WHITELISTED | Score: 0
+[Sun Mar 15 12:08:22 2026] calendar.google.com | SAFE_VISIT | Score: 5.8 | BRAND_IMPERSONATION:google
+[Sun Mar 15 12:08:22 2026] calendar.google.com | THREAT_DETECTED | Score: 13.6 | BRAND_IMPERSONATION:google, RAPID_x2
+[Sun Mar 15 12:10:25 2026] us05web.zoom.us | SAFE_VISIT | Score: 0.8 | OK
+[Sun Mar 15 12:10:38 2026] web.whatsapp.com | WHITELISTED | Score: 0
+[Sun Mar 15 12:17:14 2026] gemini.google.com | WHITELISTED | Score: 0
+[Sun Mar 15 12:17:17 2026] gemini.google.com | WHITELISTED | Score: 0
+[Sun Mar 15 12:19:06 2026] gemini.google.com | WHITELISTED | Score: 0
+[Sun Mar 15 12:19:50 2026] gemini.google.com | WHITELISTED | Score: 0
