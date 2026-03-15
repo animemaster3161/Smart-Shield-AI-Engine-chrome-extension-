@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>SmartShield — Security Dashboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Share+Tech+Mono&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
+<style>
+/* ══════════════════════════════════════════
+   ROOT VARIABLES
+══════════════════════════════════════════ */
+:root {
+  --bg:       #05080d;
+  --bg2:      #090d15;
+  --surface:  #0c1220;
+  --surface2: #101828;
+  --border:   rgba(255,255,255,0.06);
+  --border2:  rgba(255,255,255,0.1);
+
+  --cyan:     #00e5ff;
+  --cyan-dim: rgba(0,229,255,0.12);
+  --green:    #00e676;
+  --green-dim:rgba(0,230,118,0.12);
+  --red:      #ff1744;
+  --red-dim:  rgba(255,23,68,0.12);
+  --amber:    #ffab00;
+  --amber-dim:rgba(255,171,0,0.12);
+  --blue:     #448aff;
+
+  --text:     #cdd5e0;
+  --text2:    #7b8899;
+  --text3:    #3d4a5c;
+}
+
+/* ══════════════════════════════════════════
+   RESET & BASE
+══════════════════════════════════════════ */
+* { margin:0; padding:0; box-sizing:border-box; }
+
+html, body {
+  min-height:100vh;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 13px;
+  overflow-x: hidden;
+}
+
+/* Animated grid */
+body::before {
+  content:'';
+  position:fixed; inset:0; pointer-events:none; z-index:0;
+  background-image:
+    linear-gradient(rgba(0,229,255,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,229,255,0.025) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+
+body::after {
+  content:'';
+  position:fixed; inset:0; pointer-events:none; z-index:0;
+  background: radial-gradient(ellipse 80% 50% at 50% -10%, rgba(0,229,255,0.05), transparent 60%);
+}
+
+/* Scanlines */
+.scan {
+  position:fixed; inset:0; pointer-events:none; z-index:1;
+  background: repeating-linear-gradient(
+    0deg, transparent, transparent 3px,
+    rgba(0,0,0,0.08) 3px, rgba(0,0,0,0.08) 4px
+  );
+}
+
+/* ══════════════════════════════════════════
+   LAYOUT
+══════════════════════════════════════════ */
+.page { position:relative; z-index:2; min-height:100vh; display:flex; flex-direction:column; }
+
+/* ── TOP NAV ── */
+.topnav {
+  display:flex; align-items:center; justify-content:space-between;
+  padding: 14px 28px;
+  background: rgba(9,13,21,0.9);
+  border-bottom: 1px solid var(--border2);
+  backdrop-filter: blur(12px);
+  position: sticky; top:0; z-index:100;
+}
+
+.nav-logo {
+  display:flex; align-items:center; gap:12px;
+}
+
+.nav-shield svg { width:32px; height:32px; }
+
+.nav-title {
+  font-family:'Syne', sans-serif;
+  font-size:18px; font-weight:800;
+  letter-spacing:1px; color:#fff;
+}
+.nav-title span { color: var(--cyan); }
+
+.nav-center {
+  display:flex; align-items:center; gap:24px;
+}
+
+.nav-tab {
+  font-size:11px; letter-spacing:2px; color:var(--text2);
+  cursor:pointer; padding:4px 0;
+  border-bottom:2px solid transparent;
+  transition:all 0.2s;
+}
+.nav-tab.active, .nav-tab:hover { color:var(--cyan); border-color:var(--cyan); }
+
+.nav-right {
+  display:flex; align-items:center; gap:16px;
+}
+
+.live-pill {
+  display:flex; align-items:center; gap:6px;
+  background: var(--green-dim);
+  border:1px solid rgba(0,230,118,0.25);
+  border-radius:99px; padding:4px 12px;
+  font-size:10px; color:var(--green); letter-spacing:1.5px;
+}
+.live-dot {
+  width:6px; height:6px; border-radius:50%;
+  background:var(--green);
+  box-shadow:0 0 8px var(--green);
+  animation: livePulse 1.5s ease-in-out infinite;
+}
+@keyframes livePulse { 0%,100%{opacity:1;} 50%{opacity:0.3;} }
+
+.offline-pill {
+  display:flex; align-items:center; gap:6px;
+  background: var(--amber-dim);
+  border:1px solid rgba(255,171,0,0.25);
+  border-radius:99px; padding:4px 12px;
+  font-size:10px; color:var(--amber); letter-spacing:1.5px;
+}
+
+#clockDisplay {
+  font-size:12px; color:var(--text2);
+}
+
+/* ── MAIN CONTENT ── */
+.main {
+  flex:1; padding: 28px;
+  display:flex; flex-direction:column; gap:20px;
+}
+
+/* ══════════════════════════════════════════
+   STAT CARDS ROW
+══════════════════════════════════════════ */
+.stat-row {
+  display:grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap:14px;
+}
+
+.stat-card {
+  background: var(--surface);
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:18px 20px;
+  position:relative; overflow:hidden;
+  transition: border-color 0.3s, transform 0.2s;
+}
+.stat-card:hover { transform:translateY(-2px); }
+
+/* Left accent bar */
+.stat-card::before {
+  content:''; position:absolute;
+  left:0; top:0; bottom:0; width:3px;
+  border-radius:3px 0 0 3px;
+}
+.stat-card.c-cyan::before   { background:var(--cyan);  box-shadow:0 0 8px var(--cyan); }
+.stat-card.c-green::before  { background:var(--green); box-shadow:0 0 8px var(--green); }
+.stat-card.c-red::before    { background:var(--red);   box-shadow:0 0 8px var(--red); }
+.stat-card.c-amber::before  { background:var(--amber); box-shadow:0 0 8px var(--amber); }
+.stat-card.c-blue::before   { background:var(--blue);  box-shadow:0 0 8px var(--blue); }
+
+.stat-card:hover.c-cyan  { border-color:rgba(0,229,255,0.3); }
+.stat-card:hover.c-green { border-color:rgba(0,230,118,0.3); }
+.stat-card:hover.c-red   { border-color:rgba(255,23,68,0.3); }
+.stat-card:hover.c-amber { border-color:rgba(255,171,0,0.3); }
+.stat-card:hover.c-blue  { border-color:rgba(68,138,255,0.3); }
+
+.sc-label {
+  font-size:9px; letter-spacing:2.5px; color:var(--text2);
+  text-transform:uppercase; margin-bottom:10px;
+}
+
+.sc-value {
+  font-family:'Syne', sans-serif;
+  font-size:32px; font-weight:800;
+  line-height:1; margin-bottom:6px;
+  transition: color 0.3s;
+}
+.c-cyan  .sc-value { color:var(--cyan); }
+.c-green .sc-value { color:var(--green); }
+.c-red   .sc-value { color:var(--red); }
+.c-amber .sc-value { color:var(--amber); }
+.c-blue  .sc-value { color:var(--blue); }
+
+.sc-sub {
+  font-size:10px; color:var(--text3);
+  letter-spacing:0.5px;
+}
+
+/* ══════════════════════════════════════════
+   MIDDLE ROW: Threat Gauge + Activity Chart
+══════════════════════════════════════════ */
+.mid-row {
+  display:grid;
+  grid-template-columns: 280px 1fr;
+  gap:14px;
+}
+
+/* Gauge card */
+.gauge-card {
+  background: var(--surface);
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:22px 20px;
+  display:flex; flex-direction:column; align-items:center;
+}
+
+.card-head {
+  width:100%; display:flex; justify-content:space-between;
+  align-items:center; margin-bottom:20px;
+}
+.card-title {
+  font-family:'Rajdhani', sans-serif;
+  font-size:14px; font-weight:700;
+  color:#fff; letter-spacing:1px;
+  text-transform:uppercase;
+}
+.card-badge {
+  font-size:9px; letter-spacing:1.5px;
+  padding:2px 8px; border-radius:4px;
+  background: var(--cyan-dim);
+  color:var(--cyan); border:1px solid rgba(0,229,255,0.2);
+}
+
+.gauge-wrap {
+  position:relative;
+  width:180px; height:100px;
+  margin-bottom:16px;
+}
+
+.gauge-wrap canvas { width:180px !important; height:100px !important; }
+
+.gauge-val {
+  position:absolute;
+  bottom:0; left:50%;
+  transform:translateX(-50%);
+  text-align:center;
+}
+.gauge-num {
+  font-family:'Syne', sans-serif;
+  font-size:28px; font-weight:800;
+  color:var(--red);
+}
+.gauge-unit {
+  font-size:9px; color:var(--text2);
+  letter-spacing:1px;
+}
+
+.gauge-labels {
+  display:flex; justify-content:space-between;
+  width:180px; font-size:9px; color:var(--text3);
+}
+
+.threat-level {
+  margin-top:16px; text-align:center;
+  font-size:11px; letter-spacing:2px; color:var(--text2);
+}
+.tl-badge {
+  display:inline-block; margin-top:6px;
+  font-size:12px; font-weight:700; letter-spacing:2px;
+  padding:4px 14px; border-radius:6px;
+}
+.tl-low    { background:var(--green-dim); color:var(--green); border:1px solid rgba(0,230,118,0.3); }
+.tl-medium { background:var(--amber-dim); color:var(--amber); border:1px solid rgba(255,171,0,0.3); }
+.tl-high   { background:var(--red-dim);   color:var(--red);   border:1px solid rgba(255,23,68,0.3); }
+
+/* Activity chart card */
+.chart-card {
+  background: var(--surface);
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:22px 20px;
+}
+
+.chart-area {
+  position:relative; width:100%; height:140px;
+  margin-top:8px;
+}
+
+#activityChart {
+  width:100% !important; height:140px !important;
+}
+
+/* ══════════════════════════════════════════
+   BOTTOM ROW: Logs + Blacklist
+══════════════════════════════════════════ */
+.bot-row {
+  display:grid;
+  grid-template-columns: 1fr 340px;
+  gap:14px;
+}
+
+.log-card, .bl-card {
+  background: var(--surface);
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:18px 20px;
+  display:flex; flex-direction:column;
+}
+
+.log-table-wrap {
+  flex:1; overflow-y:auto; margin-top:10px;
+  max-height: 320px;
+}
+.log-table-wrap::-webkit-scrollbar { width:4px; }
+.log-table-wrap::-webkit-scrollbar-thumb { background:var(--border2); border-radius:4px; }
+
+table {
+  width:100%; border-collapse:collapse;
+}
+thead th {
+  font-size:9px; letter-spacing:2px; color:var(--text3);
+  text-transform:uppercase; padding:0 8px 8px;
+  text-align:left; border-bottom:1px solid var(--border);
+  position:sticky; top:0; background:var(--surface); z-index:1;
+}
+tbody tr {
+  border-bottom:1px solid rgba(255,255,255,0.03);
+  transition: background 0.15s;
+}
+tbody tr:hover { background:rgba(255,255,255,0.025); }
+tbody td {
+  padding:7px 8px;
+  font-size:11px;
+  vertical-align:middle;
+}
+.td-time { color:var(--text3); white-space:nowrap; font-size:10px; }
+.td-domain { color:var(--text); max-width:180px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.td-reason { color:var(--text3); font-size:10px; max-width:140px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+
+/* Status pills */
+.pill {
+  display:inline-block; font-size:9px; letter-spacing:1px;
+  padding:2px 7px; border-radius:4px; white-space:nowrap;
+  font-weight:700;
+}
+.pill-safe      { background:var(--green-dim); color:var(--green); }
+.pill-blocked   { background:var(--red-dim);   color:var(--red); }
+.pill-white     { background:var(--cyan-dim);  color:var(--cyan); }
+.pill-http      { background:var(--amber-dim); color:var(--amber); }
+.pill-threat    { background:var(--red-dim);   color:var(--red);
+                  border:1px solid var(--red); animation:pillBlink 1s infinite; }
+@keyframes pillBlink { 0%,100%{opacity:1;} 50%{opacity:0.5;} }
+
+/* Blacklist card */
+.bl-list {
+  flex:1; overflow-y:auto; margin-top:10px;
+  max-height:320px;
+}
+.bl-list::-webkit-scrollbar { width:4px; }
+.bl-list::-webkit-scrollbar-thumb { background:var(--border2); border-radius:4px; }
+
+.bl-item {
+  display:flex; align-items:center; gap:10px;
+  padding:8px 10px; border-radius:6px;
+  border:1px solid rgba(255,23,68,0.12);
+  margin-bottom:6px;
+  background:var(--red-dim);
+  transition:border-color 0.2s;
+}
+.bl-item:hover { border-color:rgba(255,23,68,0.3); }
+.bl-icon { color:var(--red); font-size:12px; flex-shrink:0; }
+.bl-domain {
+  font-size:11px; color:var(--text);
+  overflow:hidden; text-overflow:ellipsis; white-space:nowrap; flex:1;
+}
+.bl-empty {
+  text-align:center; color:var(--text3);
+  padding:32px 0; font-size:11px; letter-spacing:1px;
+}
+
+/* ══════════════════════════════════════════
+   OFFLINE OVERLAY
+══════════════════════════════════════════ */
+#offlineOverlay {
+  display:none; position:fixed; inset:0; z-index:200;
+  background:rgba(5,8,13,0.92); backdrop-filter:blur(6px);
+  align-items:center; justify-content:center; flex-direction:column;
+  gap:12px;
+}
+#offlineOverlay.show { display:flex; }
+.offline-icon { font-size:48px; }
+.offline-msg {
+  font-family:'Syne', sans-serif;
+  font-size:20px; color:var(--amber); letter-spacing:1px;
+}
+.offline-sub { font-size:11px; color:var(--text2); letter-spacing:1px; }
+
+/* ══════════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════════ */
+@media (max-width:1100px) {
+  .stat-row { grid-template-columns:repeat(3,1fr); }
+  .mid-row  { grid-template-columns:1fr; }
+  .bot-row  { grid-template-columns:1fr; }
+}
+@media (max-width:700px) {
+  .stat-row { grid-template-columns:1fr 1fr; }
+  .main { padding:16px; }
+  .topnav { padding:12px 16px; }
+  .nav-center { display:none; }
+}
+
+/* Entry animation */
+@keyframes fadeUp {
+  from { opacity:0; transform:translateY(10px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+.stat-card, .gauge-card, .chart-card, .log-card, .bl-card {
+  animation: fadeUp 0.5s ease forwards;
+}
+</style>
+</head>
+<body>
+<div class="scan"></div>
+
+<div id="offlineOverlay">
+  <div class="offline-icon">⚡</div>
+  <div class="offline-msg">ENGINE OFFLINE</div>
+  <div class="offline-sub">Start smartshield_server.exe to connect</div>
+</div>
+
+<div class="page">
+
+  <nav class="topnav">
+    <div class="nav-logo">
+      <div class="nav-shield">
+        <svg viewBox="0 0 32 32" fill="none">
+          <path d="M16 2L4 8V17C4 24 9 29.5 16 32C23 29.5 28 24 28 17V8L16 2Z"
+                fill="rgba(0,229,255,0.08)" stroke="#00e5ff" stroke-width="1.5"/>
+          <path d="M16 8L8 12V17C8 22 11.5 26 16 28C20.5 26 24 22 24 17V12L16 8Z"
+                fill="rgba(0,229,255,0.05)" stroke="rgba(0,229,255,0.35)" stroke-width="1"/>
+          <path d="M11.5 16.5L14.5 19.5L20.5 13.5" stroke="#00e5ff" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <span class="nav-title">Smart<span>Shield</span></span>
+    </div>
+
+    <div class="nav-center">
+      <span class="nav-tab active">DASHBOARD</span>
+      <span class="nav-tab">THREAT LOG</span>
+      <span class="nav-tab">BLACKLIST</span>
+    </div>
+
+    <div class="nav-right">
+      <div id="engineStatus" class="live-pill">
+        <div class="live-dot"></div>ENGINE LIVE
+      </div>
+      <span id="clockDisplay">--:--:--</span>
+    </div>
+  </nav>
+
+  <main class="main">
+
+    <div class="stat-row">
+      <div class="stat-card c-cyan">
+        <div class="sc-label">Total Checked</div>
+        <div class="sc-value" id="sc-total">0</div>
+        <div class="sc-sub">URLs analyzed</div>
+      </div>
+      <div class="stat-card c-green">
+        <div class="sc-label">Safe Visits</div>
+        <div class="sc-value" id="sc-safe">0</div>
+        <div class="sc-sub">No threats found</div>
+      </div>
+      <div class="stat-card c-red">
+        <div class="sc-label">Threats Blocked</div>
+        <div class="sc-value" id="sc-blocked">0</div>
+        <div class="sc-sub">Sites intercepted</div>
+      </div>
+      <div class="stat-card c-amber">
+        <div class="sc-label">HTTP Warnings</div>
+        <div class="sc-value" id="sc-http">0</div>
+        <div class="sc-sub">Insecure HTTP sites</div>
+      </div>
+      <div class="stat-card c-blue">
+        <div class="sc-label">Blacklisted</div>
+        <div class="sc-value" id="sc-bl">0</div>
+        <div class="sc-sub">Persistent blocks</div>
+      </div>
+    </div>
+
+    <div class="mid-row">
+
+      <div class="gauge-card">
+        <div class="card-head">
+          <span class="card-title">Threat Meter</span>
+          <span class="card-badge">LIVE</span>
+        </div>
+        <div class="gauge-wrap">
+          <canvas id="gaugeCanvas" width="180" height="100"></canvas>
+          <div class="gauge-val">
+            <div class="gauge-num" id="threatPct">0%</div>
+            <div class="gauge-unit">THREAT RATIO</div>
+          </div>
+        </div>
+        <div class="gauge-labels">
+          <span>LOW</span><span>MED</span><span>HIGH</span>
+        </div>
+        <div class="threat-level">
+          CURRENT LEVEL
+          <div class="tl-badge tl-low" id="threatLabel">LOW</div>
+        </div>
+      </div>
+
+      <div class="chart-card">
+        <div class="card-head">
+          <span class="card-title">Activity Timeline</span>
+          <span class="card-badge">LAST 20 EVENTS</span>
+        </div>
+        <div class="chart-area">
+          <canvas id="activityChart"></canvas>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="bot-row">
+
+      <div class="log-card">
+        <div class="card-head">
+          <span class="card-title">Live Event Log</span>
+          <span class="card-badge" id="logCount">0 EVENTS</span>
+        </div>
+        <div class="log-table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Time</th>
+                <th>Domain</th>
+                <th>Status</th>
+                <th>Score</th>
+                <th>Reason</th>
+              </tr>
+            </thead>
+            <tbody id="logBody">
+              <tr><td colspan="5" style="text-align:center;color:#3d4a5c;padding:24px;">
+                Waiting for events...
+              </td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="bl-card">
+        <div class="card-head">
+          <span class="card-title">Blacklist</span>
+          <span class="card-badge" id="blCount">0</span>
+        </div>
+        <div class="bl-list" id="blList">
+          <div class="bl-empty">No blocked domains yet</div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<script src="dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SmartShield</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Share+Tech+Mono&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:      #080c12;
+      --surface: #0f1620;
+      --border:  rgba(255,255,255,0.07);
+      --accent:  #00d4ff;
+      --green:   #30d158;
+      --red:     #ff2d55;
+      --amber:   #ff9f0a;
+      --text:    #e2e8f0;
+      --muted:   #556;
+    }
+
+    * { margin:0; padding:0; box-sizing:border-box; }
+
+    body {
+      width: 320px;
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      overflow: hidden;
+    }
+
+    /* ── Header ─────────────────────────────── */
+    .header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 14px 16px 12px;
+      display:flex; align-items:center; justify-content:space-between;
+    }
+
+    .logo-area { display:flex; align-items:center; gap:10px; }
+
+    .logo-icon {
+      width:32px; height:32px;
+    }
+
+    .logo-text {
+      font-family:'Rajdhani', sans-serif;
+      font-size:18px; font-weight:700;
+      letter-spacing:0.5px;
+      color: #fff;
+    }
+
+    .logo-text span { color: var(--accent); }
+
+    .version-badge {
+      font-family:'Share Tech Mono', monospace;
+      font-size:10px;
+      color: var(--muted);
+      background: rgba(255,255,255,0.05);
+      border:1px solid var(--border);
+      padding:2px 8px; border-radius:99px;
+    }
+
+    /* ── Status card ─────────────────────────── */
+    .status-card {
+      margin: 12px 12px 8px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      padding: 18px 16px;
+      position:relative; overflow:hidden;
+      transition: border-color 0.3s, background 0.3s;
+    }
+
+    .status-card.safe {
+      background: rgba(48,209,88,0.05);
+      border-color: rgba(48,209,88,0.25);
+    }
+
+    .status-card.danger {
+      background: rgba(255,45,85,0.07);
+      border-color: rgba(255,45,85,0.3);
+    }
+
+    .status-card.loading {
+      background: rgba(0,212,255,0.04);
+      border-color: rgba(0,212,255,0.2);
+    }
+
+    .status-card.offline {
+      background: rgba(255,159,10,0.05);
+      border-color: rgba(255,159,10,0.2);
+    }
+
+    .status-header {
+      display:flex; align-items:center; gap:10px; margin-bottom:10px;
+    }
+
+    .status-dot {
+      width:10px; height:10px; border-radius:50%; flex-shrink:0;
+    }
+
+    .safe .status-dot    { background:var(--green); box-shadow:0 0 8px var(--green); animation: pulse-green 2s infinite; }
+    .danger .status-dot  { background:var(--red);   box-shadow:0 0 8px var(--red);   animation: pulse-red 1s infinite; }
+    .loading .status-dot { background:var(--accent); animation: spin-dot 1.5s linear infinite; }
+    .offline .status-dot { background:var(--amber);  box-shadow:0 0 8px var(--amber); }
+
+    @keyframes pulse-green { 0%,100%{box-shadow:0 0 6px var(--green);} 50%{box-shadow:0 0 14px var(--green);} }
+    @keyframes pulse-red   { 0%,100%{box-shadow:0 0 8px var(--red);}   50%{box-shadow:0 0 18px var(--red);}   }
+    @keyframes spin-dot    { from{opacity:0.4;} to{opacity:1;} }
+
+    .status-label {
+      font-family:'Rajdhani', sans-serif;
+      font-size:17px; font-weight:700; letter-spacing:0.3px;
+    }
+
+    .safe .status-label    { color: var(--green); }
+    .danger .status-label  { color: var(--red); }
+    .loading .status-label { color: var(--accent); }
+    .offline .status-label { color: var(--amber); }
+
+    .status-desc {
+      font-size:12px; color: #64748b; line-height:1.5;
+    }
+
+    /* Score bar */
+    .score-row {
+      display:flex; align-items:center; gap:8px; margin-top:10px;
+    }
+
+    .score-track {
+      flex:1; height:4px;
+      background:rgba(255,255,255,0.06);
+      border-radius:99px; overflow:hidden;
+    }
+
+    .score-fill {
+      height:100%; border-radius:99px;
+      transition: width 0.8s cubic-bezier(0.16,1,0.3,1);
+    }
+
+    .safe .score-fill   { background: var(--green); }
+    .danger .score-fill { background: linear-gradient(90deg, var(--amber), var(--red)); }
+
+    .score-val {
+      font-family:'Share Tech Mono', monospace;
+      font-size:10px; color: var(--muted);
+      white-space:nowrap;
+    }
+
+    /* ── Stats row ───────────────────────────── */
+    .stats-row {
+      display:grid; grid-template-columns:1fr 1fr;
+      gap:8px; margin: 0 12px 8px;
+    }
+
+    .stat-item {
+      background: var(--surface);
+      border:1px solid var(--border);
+      border-radius:8px; padding:10px 12px;
+    }
+
+    .stat-item .s-label {
+      font-size:9px; letter-spacing:1.5px; color:var(--muted);
+      text-transform:uppercase; margin-bottom:2px;
+    }
+
+    .stat-item .s-val {
+      font-family:'Rajdhani', sans-serif;
+      font-size:20px; font-weight:700;
+    }
+
+    .s-val.green { color:var(--green); }
+    .s-val.red   { color:var(--red); }
+
+    /* ── URL display ────────────────────────── */
+    .url-box {
+      margin: 0 12px 8px;
+      background: var(--surface);
+      border:1px solid var(--border);
+      border-radius:8px; padding:8px 12px;
+      display:flex; align-items:center; gap:8px;
+    }
+
+    .url-box .url-label {
+      font-size:9px; letter-spacing:1.5px; color:var(--muted);
+      text-transform:uppercase; white-space:nowrap;
+    }
+
+    .url-box .url-val {
+      font-family:'Share Tech Mono', monospace;
+      font-size:10px; color: var(--text);
+      overflow:hidden; text-overflow:ellipsis; white-space:nowrap;
+      flex:1; opacity:0.7;
+    }
+
+    /* ── Footer ─────────────────────────────── */
+    .footer {
+      padding: 8px 12px 12px;
+      display:flex; align-items:center; justify-content:space-between;
+    }
+
+    .footer-brand {
+      font-family:'Share Tech Mono', monospace;
+      font-size:9px; color: #2a3040; letter-spacing:1.5px;
+    }
+
+    .server-status {
+      display:flex; align-items:center; gap:5px;
+      font-size:9px; letter-spacing:1px;
+      font-family:'Share Tech Mono', monospace;
+    }
+
+    .server-dot {
+      width:5px; height:5px; border-radius:50%;
+    }
+
+    .online  .server-dot { background:var(--green); }
+    .offline-txt .server-dot { background:var(--amber); }
+
+    /* ── Dashboard Button ────────────────────── */
+    .dash-btn {
+      display:flex; align-items:center; justify-content:center; gap:7px;
+      margin: 0 12px 10px;
+      padding: 9px 14px;
+      background: rgba(0,212,255,0.07);
+      border: 1px solid rgba(0,212,255,0.25);
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-family: "Rajdhani", sans-serif;
+      font-size: 14px; font-weight: 700;
+      color: #00d4ff;
+      letter-spacing: 0.5px;
+    }
+    .dash-btn:hover {
+      background: rgba(0,212,255,0.14);
+      border-color: rgba(0,212,255,0.5);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 16px rgba(0,212,255,0.15);
+    }
+    .dash-btn svg { flex-shrink:0; }
+  </style>
+</head>
+<body>
+
+<!-- Header -->
+<div class="header">
+  <div class="logo-area">
+    <svg class="logo-icon" viewBox="0 0 32 32" fill="none">
+      <path d="M16 2L4 8V17C4 24 9 29.5 16 32C23 29.5 28 24 28 17V8L16 2Z"
+            fill="rgba(0,212,255,0.08)" stroke="#00d4ff" stroke-width="1.5"/>
+      <path d="M16 8L8 12V17C8 22 11.5 26 16 28C20.5 26 24 22 24 17V12L16 8Z"
+            fill="rgba(0,212,255,0.05)" stroke="rgba(0,212,255,0.4)" stroke-width="1"/>
+      <path d="M11.5 16L14.5 19L20.5 13" stroke="#00d4ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <span class="logo-text">Smart<span>Shield</span></span>
+  </div>
+  <span class="version-badge">v4.0</span>
+</div>
+
+<!-- Status Card -->
+<div class="status-card loading" id="statusCard">
+  <div class="status-header">
+    <div class="status-dot"></div>
+    <div class="status-label" id="statusLabel">Analyzing...</div>
+  </div>
+  <div class="status-desc" id="statusDesc">Checking current site with AI engine</div>
+  <div class="score-row" id="scoreRow" style="display:none">
+    <div class="score-track">
+      <div class="score-fill" id="scoreFill" style="width:0%"></div>
+    </div>
+    <span class="score-val" id="scoreVal">—</span>
+  </div>
+</div>
+
+<!-- Current URL -->
+<div class="url-box">
+  <span class="url-label">URL</span>
+  <span class="url-val" id="urlVal">loading...</span>
+</div>
+
+<!-- Stats -->
+<div class="stats-row">
+  <div class="stat-item">
+    <div class="s-label">Sites Safe</div>
+    <div class="s-val green" id="safeCount">0</div>
+  </div>
+  <div class="stat-item">
+    <div class="s-label">Threats Blocked</div>
+    <div class="s-val red" id="blockedCount">0</div>
+  </div>
+</div>
+
+<!-- Dashboard Button -->
+<div class="dash-btn" id="dashBtn">
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+    <rect x="3" y="3" width="7" height="7" rx="1" stroke="#00d4ff" stroke-width="2"/>
+    <rect x="14" y="3" width="7" height="7" rx="1" stroke="#00d4ff" stroke-width="2"/>
+    <rect x="3" y="14" width="7" height="7" rx="1" stroke="#00d4ff" stroke-width="2"/>
+    <rect x="14" y="14" width="7" height="7" rx="1" stroke="#00d4ff" stroke-width="2"/>
+  </svg>
+  Open Dashboard
+</div>
+
+<!-- Footer -->
+<div class="footer">
+  <span class="footer-brand">SMARTSHIELD AI SECURITY</span>
+  <div class="server-status online" id="serverStatus">
+    <div class="server-dot"></div>
+    <span style="color:#64748b" id="serverStatusTxt">ENGINE ONLINE</span>
+  </div>
+</div>
+
+<script src="popup.js"></script>
+</body>
+</html>

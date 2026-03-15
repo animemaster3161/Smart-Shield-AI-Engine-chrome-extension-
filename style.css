@@ -1,0 +1,7 @@
+/* SmartShield style.css — supplemental styles */
+/* Main styles are embedded in popup.html for extension compatibility */
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

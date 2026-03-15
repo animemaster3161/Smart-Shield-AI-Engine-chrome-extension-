@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "SmartShield AI Security",
+  "version": "4.3",
+  "description": "Real-time AI-powered phishing and threat detection for your browser.",
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "storage",
+    "webNavigation"
+  ],
+  "host_permissions": [
+    "http://localhost:8080/*",
+    "http://*/*",
+    "https://*/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "SmartShield AI Security"
+  },
+  "web_accessible_resources": [{
+    "resources": ["blocked.html", "style.css", "dashboard.html"],
+    "matches": ["<all_urls>"]
+  }]
+}

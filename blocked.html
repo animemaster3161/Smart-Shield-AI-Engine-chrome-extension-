@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SmartShield — Blocked</title>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&family=Share+Tech+Mono&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --red:    #ff2d55;
+      --green:  #30d158;
+      --amber:  #ff9f0a;
+      --bg:     #070a0f;
+      --card:   #0d1520;
+      --border: rgba(255,45,85,0.25);
+      --muted:  #556070;
+      --text:   #dde3ec;
+    }
+
+    * { margin:0; padding:0; box-sizing:border-box; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Grid bg */
+    body::before {
+      content:''; position:fixed; inset:0; pointer-events:none;
+      background-image:
+        linear-gradient(rgba(255,45,85,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,45,85,0.03) 1px, transparent 1px);
+      background-size: 36px 36px;
+    }
+
+    /* Red glow */
+    body::after {
+      content:''; position:fixed; inset:0; pointer-events:none;
+      background: radial-gradient(ellipse 55% 45% at 50% 50%, rgba(255,45,85,0.09) 0%, transparent 70%);
+      animation: glow 3s ease-in-out infinite;
+    }
+    @keyframes glow { 0%,100%{opacity:0.6;} 50%{opacity:1;} }
+
+    /* Scanlines */
+    .scan {
+      position:fixed; inset:0; pointer-events:none; z-index:1;
+      background: repeating-linear-gradient(
+        0deg, transparent, transparent 2px,
+        rgba(0,0,0,0.12) 2px, rgba(0,0,0,0.12) 4px
+      );
+    }
+
+    /* ── MAIN CARD ── */
+    .wrap {
+      position:relative; z-index:10;
+      width: min(520px, 94vw);
+      animation: slideIn 0.5s cubic-bezier(0.16,1,0.3,1) forwards;
+    }
+    @keyframes slideIn {
+      from { opacity:0; transform:translateY(20px) scale(0.97); }
+      to   { opacity:1; transform:translateY(0) scale(1); }
+    }
+
+    /* Top bar */
+    .topbar {
+      display:flex; align-items:center; justify-content:space-between;
+      padding: 8px 16px;
+      background: rgba(255,45,85,0.07);
+      border: 1px solid var(--border);
+      border-bottom: none;
+      border-radius: 10px 10px 0 0;
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 10px; color: var(--red); letter-spacing: 1.5px;
+    }
+    .dots { display:flex; gap:5px; }
+    .dot { width:9px; height:9px; border-radius:50%; }
+    .dot.r { background:#ff2d55; box-shadow:0 0 5px #ff2d55; }
+    .dot.y { background:#ff9f0a; }
+    .dot.g { background:#30d158; }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 0 0 10px 10px;
+      padding: 28px 28px 24px;
+      box-shadow: 0 30px 70px rgba(0,0,0,0.7),
+                  inset 0 1px 0 rgba(255,255,255,0.04);
+    }
+
+    /* ── Header row ── */
+    .header-row {
+      display:flex; align-items:center; gap:14px; margin-bottom:16px;
+    }
+
+    .shield-icon { flex-shrink:0; }
+
+    .alert-badge {
+      display:inline-flex; align-items:center; gap:5px;
+      background: rgba(255,45,85,0.1);
+      border:1px solid rgba(255,45,85,0.3);
+      border-radius:5px; padding:3px 10px;
+      font-family:'Share Tech Mono',monospace;
+      font-size:9px; color:var(--red); letter-spacing:2px;
+      margin-bottom:5px;
+    }
+    .blink { width:5px; height:5px; border-radius:50%; background:var(--red);
+      animation: bl 1s step-end infinite; }
+    @keyframes bl { 0%,100%{opacity:1;} 50%{opacity:0;} }
+
+    h1 {
+      font-family:'Rajdhani', sans-serif;
+      font-size:22px; font-weight:700;
+      color:#fff; line-height:1.15; letter-spacing:0.3px;
+    }
+    h1 span { color:var(--red); }
+
+    /* ── Domain box ── */
+    .domain-box {
+      display:flex; align-items:center; gap:10px;
+      background: rgba(255,45,85,0.05);
+      border:1px solid rgba(255,45,85,0.18);
+      border-radius:7px; padding:10px 14px; margin-bottom:14px;
+    }
+    .d-lbl { font-size:9px; letter-spacing:2px; color:var(--muted); white-space:nowrap; }
+    .d-val { font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--red);
+      flex:1; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+
+    /* ── Info grid ── */
+    .grid2 { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-bottom:16px; }
+    .gi {
+      background:rgba(255,255,255,0.02);
+      border:1px solid rgba(255,255,255,0.06);
+      border-radius:7px; padding:10px 12px;
+    }
+    .gi .gl { font-size:9px; letter-spacing:1.5px; color:var(--muted); text-transform:uppercase; margin-bottom:3px; }
+    .gi .gv { font-family:'Share Tech Mono',monospace; font-size:13px; }
+    .gv.danger { color:var(--red); }
+    .gv.warn   { color:var(--amber); }
+
+    /* ── Score bar ── */
+    .score-bar { margin-bottom:18px; }
+    .sb-head { display:flex; justify-content:space-between; font-size:10px; color:var(--muted); margin-bottom:6px; letter-spacing:1px; }
+    .sb-track { height:5px; background:rgba(255,255,255,0.05); border-radius:99px; overflow:hidden; }
+    .sb-fill  { height:100%; background:linear-gradient(90deg,var(--amber),var(--red));
+      border-radius:99px; animation:fillAnim 1s cubic-bezier(0.16,1,0.3,1) forwards; }
+    @keyframes fillAnim { from{width:0;} }
+
+    /* ── BUTTONS ── */
+    .btn-row { display:flex; flex-direction:column; gap:8px; }
+
+    .btn-row-top { display:flex; gap:8px; }
+
+    .btn {
+      flex:1; display:flex; align-items:center; justify-content:center; gap:7px;
+      padding:11px 16px; border-radius:7px;
+      font-family:'Rajdhani',sans-serif; font-size:15px; font-weight:700;
+      letter-spacing:0.5px; cursor:pointer; border:none;
+      transition: all 0.18s ease;
+    }
+
+    .btn-safe {
+      background: var(--green); color:#000;
+    }
+    .btn-safe:hover { background:#5de179; transform:translateY(-1px); box-shadow:0 6px 20px rgba(48,209,88,0.3); }
+
+    .btn-continue {
+      background: transparent;
+      color: var(--amber);
+      border: 1px solid rgba(255,159,10,0.35);
+      font-size:13px;
+    }
+    .btn-continue:hover { background:rgba(255,159,10,0.08); border-color:rgba(255,159,10,0.6); }
+
+    .btn-continue .warn-icon { font-size:13px; }
+
+    /* Confirm panel (hidden by default) */
+    .confirm-panel {
+      display:none;
+      background: rgba(255,159,10,0.07);
+      border:1px solid rgba(255,159,10,0.25);
+      border-radius:7px; padding:12px 14px;
+      margin-top:4px;
+    }
+    .confirm-panel.show { display:block; }
+    .confirm-text {
+      font-size:11px; color:var(--amber); line-height:1.5;
+      margin-bottom:10px;
+    }
+    .confirm-btns { display:flex; gap:8px; }
+    .btn-confirm-yes {
+      flex:1; padding:8px; border-radius:6px;
+      background:rgba(255,159,10,0.15); color:var(--amber);
+      border:1px solid rgba(255,159,10,0.4);
+      font-family:'Rajdhani',sans-serif; font-size:14px; font-weight:700;
+      cursor:pointer; transition:all 0.15s;
+    }
+    .btn-confirm-yes:hover { background:rgba(255,159,10,0.25); }
+    .btn-confirm-no {
+      flex:1; padding:8px; border-radius:6px;
+      background:transparent; color:var(--muted);
+      border:1px solid rgba(255,255,255,0.08);
+      font-family:'Rajdhani',sans-serif; font-size:14px; font-weight:600;
+      cursor:pointer; transition:all 0.15s;
+    }
+    .btn-confirm-no:hover { color:var(--text); border-color:rgba(255,255,255,0.2); }
+
+    /* Footer */
+    .footer {
+      margin-top:14px; text-align:center;
+      font-family:'Share Tech Mono',monospace;
+      font-size:9px; color:#2a3040; letter-spacing:1px;
+    }
+  </style>
+</head>
+<body>
+<div class="scan"></div>
+
+<div class="wrap">
+  <div class="topbar">
+    <div class="dots">
+      <div class="dot r"></div>
+      <div class="dot y"></div>
+      <div class="dot g"></div>
+    </div>
+    <span>SMARTSHIELD v4.0 — THREAT INTERCEPTED</span>
+    <span id="ts">--:--:--</span>
+  </div>
+
+  <div class="card">
+    <div class="header-row">
+      <div class="shield-icon">
+        <svg width="52" height="52" viewBox="0 0 90 90" fill="none"
+             style="filter:drop-shadow(0 0 10px rgba(255,45,85,0.5));animation:shieldPulse 2s ease-in-out infinite">
+          <style>@keyframes shieldPulse{0%,100%{filter:drop-shadow(0 0 8px rgba(255,45,85,0.5))}50%{filter:drop-shadow(0 0 20px rgba(255,45,85,0.9))}}</style>
+          <path d="M45 6L12 20V44C12 62 27 76 45 84C63 76 78 62 78 44V20L45 6Z"
+                fill="rgba(255,45,85,0.1)" stroke="#ff2d55" stroke-width="2"/>
+          <line x1="32" y1="32" x2="58" y2="58" stroke="#ff2d55" stroke-width="4" stroke-linecap="round"/>
+          <line x1="58" y1="32" x2="32" y2="58" stroke="#ff2d55" stroke-width="4" stroke-linecap="round"/>
+        </svg>
+      </div>
+
+      <div>
+        <div class="alert-badge"><div class="blink"></div>THREAT DETECTED</div>
+        <h1>Access <span>Blocked</span><br>by SmartShield AI</h1>
+      </div>
+    </div>
+
+    <div class="domain-box">
+      <span class="d-lbl">FLAGGED</span>
+      <span class="d-val" id="domainDisplay">—</span>
+    </div>
+
+    <div class="grid2">
+      <div class="gi">
+        <div class="gl">Threat Score</div>
+        <div class="gv danger" id="scoreDisplay">—</div>
+      </div>
+      <div class="gi">
+        <div class="gl">Status</div>
+        <div class="gv danger">BLOCKED</div>
+      </div>
+      <div class="gi">
+        <div class="gl">Detection</div>
+        <div class="gv warn">AI Heuristic</div>
+      </div>
+      <div class="gi">
+        <div class="gl">Reason</div>
+        <div class="gv warn" id="reasonDisplay" style="font-size:10px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">—</div>
+      </div>
+    </div>
+
+    <div class="score-bar">
+      <div class="sb-head">
+        <span>RISK LEVEL</span>
+        <span style="color:var(--red)">CRITICAL</span>
+      </div>
+      <div class="sb-track">
+        <div class="sb-fill" id="scoreBar" style="width:0%"></div>
+      </div>
+    </div>
+
+    <div class="btn-row">
+      <div class="btn-row-top">
+        <button class="btn btn-safe" id="btnReturnToSafety">
+          ← Return to Safety
+        </button>
+
+        <button class="btn btn-continue" id="btnToggleConfirm">
+          <span class="warn-icon">⚠</span> Continue anyway
+        </button>
+      </div>
+
+      <div class="confirm-panel" id="confirmPanel">
+        <div class="confirm-text">
+          ⚠ You are about to visit a site flagged as dangerous.<br>
+          This may expose your data or device to harm. Are you sure?
+        </div>
+        <div class="confirm-btns">
+          <button class="btn-confirm-yes" id="btnProceedAnyway">Yes, proceed — I understand the risk</button>
+          <button class="btn-confirm-no"  id="btnCancelConfirm">Cancel</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">SMARTSHIELD AI · <span id="dateDisplay">—</span></div>
+  </div>
+</div>
+
+<script src="blocked.js"></script>
+</body>
+</html>
